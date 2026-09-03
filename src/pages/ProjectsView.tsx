@@ -106,7 +106,7 @@ export const ProjectsView: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.length === 0 && !isFormOpen && (
           <div className="col-span-full p-12 flex flex-col items-center justify-center text-text-muted bg-surface rounded-xl border border-dashed border-border-dark">
-             <Briefcase className="w-16 h-16 mb-4 opacity-20"/>
+             <Briefcase className="w-16 h-16 mb-4 text-primary opacity-50"/>
              <p className="text-xl font-bold">No Projects Found</p>
              <p>Create a project to get started.</p>
           </div>
@@ -116,13 +116,13 @@ export const ProjectsView: React.FC = () => {
           return (
             <Card key={p.id} className="flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-200 border-t-4 border-t-primary cursor-pointer hover:shadow-lg">
               <div className="flex justify-between items-start">
-                <h3 className="text-xl font-bold text-text-primary truncate" title={p.name}>{p.name}</h3>
+                <h3 className="text-xl font-bold text-text-primary truncate flex items-center gap-2" title={p.name}><Briefcase className="w-5 h-5 text-purple-500 flex-shrink-0" />{p.name}</h3>
                 <span className="bg-success-light text-success px-2 py-1 text-xs rounded-full font-bold uppercase">{p.status}</span>
               </div>
               <p className="text-sm text-text-secondary line-clamp-2 min-h-[40px]">{p.description}</p>
               
               <div className="flex items-center gap-2 text-sm text-text-muted bg-surface-hover p-2 rounded">
-                <Calendar className="w-4 h-4"/> 
+                <Calendar className="w-4 h-4 text-primary"/> 
                 <span>Due: {new Date(p.deadline).toLocaleDateString()}</span>
               </div>
               
@@ -131,7 +131,7 @@ export const ProjectsView: React.FC = () => {
                   <div className="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold text-xs">{lead?.avatarUrl ? <img src={lead.avatarUrl} alt="Avatar" className="w-full h-full rounded-full object-cover" /> : (lead?.name.charAt(0) || "?")}</div>
                   <span className="text-xs font-medium text-text-secondary">{lead?.name || 'Unassigned'}</span>
                 </div>
-                <button onClick={(e) => { e.stopPropagation(); handleDelete(p.id); }} className="p-2 text-danger hover:bg-danger-light rounded"><Trash className="w-4 h-4"/></button>
+                <button onClick={(e) => { e.stopPropagation(); handleDelete(p.id); }} className="p-2 text-danger hover:bg-danger-light rounded"><Trash className="w-4 h-4 text-danger"/></button>
               </div>
             </Card>
           );
@@ -140,4 +140,5 @@ export const ProjectsView: React.FC = () => {
     </div>
   );
 };
+
 
