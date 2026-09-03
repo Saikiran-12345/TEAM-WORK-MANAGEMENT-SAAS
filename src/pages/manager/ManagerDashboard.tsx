@@ -81,7 +81,7 @@ export const ManagerDashboard: React.FC = () => {
           <h1 className="text-4xl font-bold mb-2">Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200">TeamFlow</span></h1>
           <p className="text-white/80 text-lg max-w-2xl">Get a real-time bird's-eye view of your entire organization. Manage projects, track financials, and monitor performance throughput.</p>
         </div>
-        <Target className="absolute right-8 top-1/2 -translate-y-1/2 w-32 h-32 text-white/10" />
+        <Target className="absolute right-8 top-1/2 -translate-y-1/2 w-32 h-32 text-white/10 animate-[spin_15s_linear_infinite]" />
       </div>
 
       {/* Core Actions */}
@@ -235,6 +235,7 @@ export const ManagerDashboard: React.FC = () => {
     </div>
   );
 };
+
 
 
 
