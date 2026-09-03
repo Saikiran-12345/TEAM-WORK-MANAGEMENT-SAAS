@@ -5,22 +5,22 @@ import { tasksService } from '../services/taskService';
 
 export const seedDatabase = () => {
   const version = localStorage.getItem('seed_version');
-  if (version !== 'v4') {
+  if (version !== 'v5') {
     localStorage.clear();
-    localStorage.setItem('seed_version', 'v4');
+    localStorage.setItem('seed_version', 'v5');
   } else {
     if (usersService.getAll().length > 0) return;
   }
 
   console.log('Seeding initial data with financials...');
 
-  const manager = usersService.create({ name: 'System Manager', email: 'manager@teamflow.local', role: 'MANAGER', isActive: true, themePreference: 'light', notificationPreference: true });
+  const manager = usersService.create({ name: 'System Manager', avatarUrl: 'https://ui-avatars.com/api/?name=System Manager&background=random&color=fff&size=128', email: 'manager@teamflow.local', role: 'MANAGER', isActive: true, themePreference: 'light', notificationPreference: true });
   
-  const lead1 = usersService.create({ name: 'Alice Chen (Lead)', email: 'lead@teamflow.local', role: 'TEAM_LEAD', isActive: true, themePreference: 'light', notificationPreference: true });
-  const lead2 = usersService.create({ name: 'David Kim', email: 'david@teamflow.local', role: 'TEAM_LEAD', isActive: true, themePreference: 'light', notificationPreference: true });
-  const lead3 = usersService.create({ name: 'Sarah Jenkins', email: 'sarah@teamflow.local', role: 'TEAM_LEAD', isActive: true, themePreference: 'light', notificationPreference: true });
+  const lead1 = usersService.create({ name: 'Alice Chen (Lead)', avatarUrl: 'https://ui-avatars.com/api/?name=Alice Chen (Lead)&background=random&color=fff&size=128', email: 'lead@teamflow.local', role: 'TEAM_LEAD', isActive: true, themePreference: 'light', notificationPreference: true });
+  const lead2 = usersService.create({ name: 'David Kim', avatarUrl: 'https://ui-avatars.com/api/?name=David Kim&background=random&color=fff&size=128', email: 'david@teamflow.local', role: 'TEAM_LEAD', isActive: true, themePreference: 'light', notificationPreference: true });
+  const lead3 = usersService.create({ name: 'Sarah Jenkins', avatarUrl: 'https://ui-avatars.com/api/?name=Sarah Jenkins&background=random&color=fff&size=128', email: 'sarah@teamflow.local', role: 'TEAM_LEAD', isActive: true, themePreference: 'light', notificationPreference: true });
 
-  const dev1 = usersService.create({ name: 'Bob Smith (Dev)', email: 'dev@teamflow.local', role: 'DEVELOPER', isActive: true, themePreference: 'light', notificationPreference: true });
+  const dev1 = usersService.create({ name: 'Bob Smith (Dev)', avatarUrl: 'https://ui-avatars.com/api/?name=Bob Smith (Dev)&background=random&color=fff&size=128', email: 'dev@teamflow.local', role: 'DEVELOPER', isActive: true, themePreference: 'light', notificationPreference: true });
   const devs = [dev1];
   
   const names = [
@@ -60,3 +60,6 @@ export const seedDatabase = () => {
 
   window.dispatchEvent(new Event('teamflow_update'));
 };
+
+
+

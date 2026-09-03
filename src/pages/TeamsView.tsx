@@ -33,7 +33,7 @@ export const TeamsView: React.FC = () => {
             {users.map(u => (
               <tr key={u.id} className="border-b border-border-light hover:bg-surface-hover/50">
                 <td className="p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold">{u.name.charAt(0)}</div>
+                  <div className="w-10 h-10 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold">{u.avatarUrl ? <img src={u.avatarUrl} alt="Avatar" className="w-full h-full rounded-full object-cover" /> : u.name.charAt(0)}</div>
                   <span className="font-semibold text-text-primary">{u.name}</span>
                 </td>
                 <td className="p-4 text-text-secondary"><div className="flex items-center gap-2"><Mail className="w-4 h-4"/>{u.email}</div></td>
@@ -47,3 +47,4 @@ export const TeamsView: React.FC = () => {
     </div>
   );
 };
+

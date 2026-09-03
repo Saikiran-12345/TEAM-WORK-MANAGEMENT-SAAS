@@ -128,7 +128,7 @@ export const ProjectsView: React.FC = () => {
               
               <div className="flex justify-between items-center mt-2 pt-4 border-t border-border-light">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold text-xs">{lead?.name.charAt(0) || '?'}</div>
+                  <div className="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold text-xs">{lead?.avatarUrl ? <img src={lead.avatarUrl} alt="Avatar" className="w-full h-full rounded-full object-cover" /> : (lead?.name.charAt(0) || "?")}</div>
                   <span className="text-xs font-medium text-text-secondary">{lead?.name || 'Unassigned'}</span>
                 </div>
                 <button onClick={(e) => { e.stopPropagation(); handleDelete(p.id); }} className="p-2 text-danger hover:bg-danger-light rounded"><Trash className="w-4 h-4"/></button>
@@ -140,3 +140,4 @@ export const ProjectsView: React.FC = () => {
     </div>
   );
 };
+

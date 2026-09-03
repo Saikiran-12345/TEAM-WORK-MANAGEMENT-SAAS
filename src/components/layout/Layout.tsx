@@ -67,9 +67,7 @@ export const Layout: React.FC = () => {
       <div className="app-container font-sans text-sm p-4 gap-4">
         <aside className={`sidebar flex flex-col transition-all duration-500 overflow-hidden ${!isSidebarOpen ? 'w-20' : 'w-72'}`}>
           <div className="h-20 flex items-center px-6 border-b border-border-light/30 gap-4">
-            <div className="bg-gradient-to-br from-primary to-purple-500 text-white p-2 rounded-xl flex items-center justify-center shadow-lg shadow-primary/30">
-              <Command className="w-5 h-5" />
-            </div>
+            <img src="/logo.jpg" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-primary/30 object-cover" />
             {isSidebarOpen && <span className="font-extrabold text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">TeamFlow</span>}
           </div>
           
@@ -93,7 +91,7 @@ export const Layout: React.FC = () => {
           <div className="p-4 border-t border-border-light/30 bg-primary/5 m-2 rounded-3xl">
             <div className="flex items-center gap-3 px-2 py-2">
               <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-purple-500 text-white flex items-center justify-center font-extrabold text-sm shadow-md">
-                {user.name.charAt(0)}
+                {user.avatarUrl ? <img src={user.avatarUrl} alt="Avatar" className="w-full h-full rounded-full object-cover" /> : user.name.charAt(0)}
               </div>
               {isSidebarOpen && (
                 <div className="overflow-hidden flex-1 text-left">
@@ -145,3 +143,6 @@ export const Layout: React.FC = () => {
     </>
   );
 };
+
+
+

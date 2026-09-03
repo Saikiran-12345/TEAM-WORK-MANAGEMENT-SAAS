@@ -188,7 +188,7 @@ export const ManagerDashboard: React.FC = () => {
              {employeeData.slice(0, 5).map(emp => (
                 <div key={emp.id} className="flex items-center gap-4 p-3 bg-surface-hover rounded-xl border border-border-light">
                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-purple-500 text-white flex items-center justify-center font-bold">
-                     {emp.name.charAt(0)}
+                     {emp.avatarUrl ? <img src={emp.avatarUrl} alt="Avatar" className="w-full h-full rounded-full object-cover" /> : emp.name.charAt(0)}
                    </div>
                    <div className="flex-1">
                      <div className="flex justify-between items-center mb-1">
@@ -213,7 +213,7 @@ export const ManagerDashboard: React.FC = () => {
                    <div className="flex items-center gap-3">
                      <div className="relative">
                        <div className="w-8 h-8 rounded-full bg-border-light flex items-center justify-center text-text-primary font-bold text-xs">
-                         {emp.name.charAt(0)}
+                         {emp.avatarUrl ? <img src={emp.avatarUrl} alt="Avatar" className="w-full h-full rounded-full object-cover" /> : emp.name.charAt(0)}
                        </div>
                        <div className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-white shadow-sm ${emp.isOnline ? 'bg-success' : 'bg-text-muted'}`}></div>
                      </div>
@@ -235,3 +235,4 @@ export const ManagerDashboard: React.FC = () => {
     </div>
   );
 };
+

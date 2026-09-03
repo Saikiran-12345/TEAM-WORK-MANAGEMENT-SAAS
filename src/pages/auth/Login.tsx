@@ -57,9 +57,7 @@ export const Login: React.FC = () => {
         <div className="w-[480px] animate-smooth-enter">
           
           <div className="flex flex-col items-center justify-center text-center mb-6">
-            <div className="bg-gradient-to-br from-primary to-purple-500 text-white p-3 rounded-[1rem] flex items-center justify-center shadow-lg shadow-primary/30 mb-3 transition-transform duration-500 hover:scale-110 hover:rotate-3">
-              <Command className="w-7 h-7" />
-            </div>
+            <img src="/logo.jpg" alt="Logo" className="w-20 h-20 mb-3 rounded-2xl shadow-lg shadow-primary/20 object-cover transition-transform duration-500 hover:scale-110 hover:rotate-3" />
             <h1 className="text-2xl font-extrabold text-text-primary tracking-[0.2em] leading-none text-center w-full">TEAMFLOW</h1>
           </div>
 
@@ -89,7 +87,7 @@ export const Login: React.FC = () => {
                    <label className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1.5 block transition-colors group-focus-within:text-primary">Password</label>
                    <div className="relative">
                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted transition-colors group-focus-within:text-primary" />
-                     <input required type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full bg-bg-root/50 border border-border-light rounded-xl pl-9 pr-3 py-2.5 text-xs font-medium focus:outline-none focus:border-primary focus:bg-surface focus:ring-4 focus:ring-primary/10 transition-all text-text-primary placeholder:text-text-muted/50" placeholder="••••••••" />
+                     <input required type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full bg-bg-root/50 border border-border-light rounded-xl pl-9 pr-3 py-2.5 text-xs font-medium focus:outline-none focus:border-primary focus:bg-surface focus:ring-4 focus:ring-primary/10 transition-all text-text-primary placeholder:text-text-muted/50" placeholder="Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢" />
                    </div>
                 </div>
               </div>
@@ -118,3 +116,5 @@ export const Login: React.FC = () => {
     </>
   );
 };
+
+
