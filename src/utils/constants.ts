@@ -6,3 +6,5 @@ export const MAX_FILE_SIZE = 5000000;
 export const DEFAULT_TIMEOUT = 5000;
 
 export const MAX_RETRY_COUNT = 3;
+
+export const MIN_PASSWORD_LENGTH = 8;
