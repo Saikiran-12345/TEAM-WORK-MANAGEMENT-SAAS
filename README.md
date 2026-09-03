@@ -16,4 +16,5 @@ To build the frontend for production, run:
 2. Start the frontend: `npm run dev` (runs on port 5173)
 
 ## Environment Variables
-Copy `backend/.env.example` to `backend/.env` and update the PostgreSQL connection string.
+Copy `backend/example.env` to `backend/.env` and update the PostgreSQL connection string.
+
