@@ -2,3 +2,5 @@
 export const SUPPORT_EMAIL = 'support@teamflow.local';
 
 export const MAX_FILE_SIZE = 5000000;
+
+export const DEFAULT_TIMEOUT = 5000;
