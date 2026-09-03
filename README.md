@@ -1,38 +1,19 @@
-# React + TypeScript + Vite
+﻿# TeamFlow Command Center (SaaS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+TeamFlow is a comprehensive workforce and project management SaaS application. It features a complete Node.js backend (with PostgreSQL) and a React/TypeScript frontend.
 
-Currently, two official plugins are available:
+## Installation
+1. Clone the repository
+2. Install frontend dependencies: `npm install`
+3. Install backend dependencies: `cd backend && npm install`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Building
+To build the frontend for production, run:
+`npm run build`
 
-## React Compiler
+## Running Locally
+1. Start the backend server: `cd backend && node index.js` (runs on port 5000)
+2. Start the frontend: `npm run dev` (runs on port 5173)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
-
-## Features
-- Task Management
-- Team Collaboration
-- Analytics Dashboard
-
+## Environment Variables
+Copy `backend/.env.example` to `backend/.env` and update the PostgreSQL connection string.
